@@ -13,7 +13,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++11"
+                cppFlags "-std=c++14"
+                arguments "-DANDROID_STL=c++_static"
             }
         }
     }
@@ -36,9 +37,14 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile "com.android.support:design:25.3.1"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.anko:anko-sdk15:0.8.3"
+    compile "org.jetbrains.anko:anko-appcompat-v7:0.8.3"
+    compile "org.jetbrains.anko:anko-design:0.8.3"
 }
 repositories {
     mavenCentral()

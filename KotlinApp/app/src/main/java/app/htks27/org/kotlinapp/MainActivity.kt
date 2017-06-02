@@ -1,18 +1,18 @@
 package app.htks27.org.kotlinapp
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.support.v7.app.AppCompatActivity
+import org.jetbrains.anko.setContentView
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        // Example of a call to a native method
-        val tv = findViewById(R.id.sample_text) as TextView
-        tv.text = stringFromJNI()
+        MyActivityUi().setContentView(this)
+//        setContentView(R.layout.activity_main)
+//        // Example of a call to a native method
+//        val tv = findViewById(R.id.sample_text) as TextView
+//        tv.text = stringFromJNI()
     }
 
     /**
